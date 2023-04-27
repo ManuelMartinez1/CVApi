@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* General */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #295C8A;
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        .name-job h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .name-job h2 {
+            font-size: 25px;
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: #fff;
+        }
+
+        /* About Me */
+        .about-me {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .about-me h2 {
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .about-me p {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Skills */
+        .skills {
+            background-color: #F7F7F7;
+            padding: 50px 0;
+        }
+
+        .skills h2 {
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skill-item {
+            width: 48%;
+            margin-bottom: 30px;
+        }
+
+        .skill-item h3 {
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .skill-progress {
+            background-color: #F0F0F0;
+            height: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            background-color: #295C8A;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Education */
+        .education {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .education h2 {
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .education-item {
+            margin-bottom: 30px;
+        }
+
+        .education-item h3 {
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .degree {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 0;
+        }
+    </style>
+    <title>Mi CV</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="name-job">
+            <h1 id="nombre10"></h1>
+            <h2 id="profesion1"></h2>
+        </div>
+        <div class="contact-info">
+            <ul>
+                <li id="direccion1"><i class="fas fa-map-marker-alt"></i> </li>
+                <li id="telefono1"><i class="fas fa-phone-alt"></i> </li>
+                <li id="email1"><i class="fas fa-envelope"></i></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<section class="about-me">
+    <div class="container">
+        <h2>Sobre mí</h2>
+        <p id="sobremi"></p>
+
+    </div>
+</section>
+<section class="skills">
+    <div class="container">
+        <h2>Habilidades</h2>
+        <div class="skill-list">
+            <div class="skill-item">
+                <h3 id="habilidades1"></h3>
+                <div class="skill-progress">
+                    <div class="skill-bar" style="width: 95%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="education">
+    <div class="container">
+        <h2>Educación</h2>
+        <div class="education-list">
+            <div class="education-item">
+                <h3 id="educacion1"></h3>
+                <p class="date" id="fechagrad1"></p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script>
+    var params = new URLSearchParams(window.location.search);
+
+    var nombre = params.get("nombre");
+    var direccion = params.get("direccion");
+    var email = params.get("email");
+    var profesion = params.get("profesion");
+    var telefono = params.get("telefono");
+    var sobreMi= params.get("sobreMi");
+    var habilidades = params.get("habilidades");
+    var educacion = params.get("educacion");
+    var fechagrad = params.get("fechagrad");
+
+    document.getElementById("nombre10").innerText= nombre;
+    document.getElementById("profesion1").innerText= profesion;
+    document.getElementById("direccion1").innerText= direccion;
+    document.getElementById("telefono1").innerText= telefono;
+    document.getElementById("email1").innerText= email;
+    document.getElementById("sobremi").innerText= sobreMi;
+    document.getElementById("habilidades1").innerText= habilidades;
+    document.getElementById("educacion1").innerText= educacion;
+    document.getElementById("fechagrad1").innerText= fechagrad;
+
+</script>
+</body>
+</html>

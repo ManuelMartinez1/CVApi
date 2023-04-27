@@ -1,0 +1,2 @@
+2,Leonardo Cruz,Direccion 3,leo@gmail.com,plomero,6861234985,Soy trabajador,inteligente,Lic. en derecho,23/7/2021
+034792,Manuel,alamillo,manuelmartjose@hotmail.com,Icc,6861234985,soy manuel,manuel,ICC,22/2/2022
